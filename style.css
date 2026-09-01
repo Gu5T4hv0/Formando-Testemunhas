@@ -237,23 +237,38 @@ body {
 .sobre-text {
   display: grid;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .sobre-text p {
   padding: 0px 7%;
 }
 
-video {
+.video-wrapper {
+  margin: 32px auto 0;
+  max-width: 840px;
+  overflow: hidden;
+  border: 1px solid rgba(46, 45, 115, 0.14);
+  border-radius: 16px;
+  background: #f2f2f7;
+  box-shadow: 0 12px 30px rgba(46, 45, 115, 0.16);
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #202124;
+}
+
+.project-video:focus-visible {
+  outline: 3px solid #2e2d73;
+  outline-offset: -3px;
 }
 
 /* =========================
    GALERIA DE FOTOS
 ========================= */
-.gallery {
-  /* text-align: center; */
-  /* border: 1px solid blue; */
-}
 
 .gallery-grid {
   display: grid;
@@ -346,6 +361,11 @@ footer {
 @media (max-width: 768px) {
   .section {
     padding: 60px 20px;
+  }
+
+  .video-wrapper {
+    margin-top: 28px;
+    border-radius: 12px;
   }
 
   .gp-nav {
