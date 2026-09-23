@@ -50,10 +50,14 @@ const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      sectionObserver.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.2
+  // Exibe a seção assim que ela se aproxima da área visível. Um threshold de
+  // 20% atrasava especialmente a galeria, pois ela é muito alta.
+  threshold: 0,
+  rootMargin: '0px 0px -10% 0px'
 });
 
 animatedSections.forEach(section => {
